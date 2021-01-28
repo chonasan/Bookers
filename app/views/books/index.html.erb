@@ -1,2 +1,22 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+
+
+
+
+
+
+
+
+
+<h2>New Book</h2>
+<!-- form_with部分 -->
+<%= form_with model:@book, local:true do |f| %>
+
+  <h5>Title</h5>
+  <%= f.text_field :title %>
+
+  <h5>Book</h5>
+  <%= f.text_area :body %>
+
+  <h4><%= f.submit 'Create Book' %></h4>
+
+<% end %>
