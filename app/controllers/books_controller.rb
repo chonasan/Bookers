@@ -13,9 +13,13 @@ class BooksController < ApplicationController
   end
   
   def create
-    book = Book.new(book_params)
-    book.save
+    @book = Book.new(book_params)
+    @books = Book.all
+   if @book.save
     redirect_to book_path(book.id)
+   else
+    render action: :index
+   end
   end
 
   def edit
